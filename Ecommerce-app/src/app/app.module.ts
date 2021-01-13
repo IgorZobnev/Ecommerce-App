@@ -37,7 +37,15 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    AngularFireModule
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCG7sSIc0rQSEx3xy55VOfYSnv3bNdUC0E",
+      authDomain: "ecommerce-app-58009.firebaseapp.com",
+      projectId: "ecommerce-app-58009",
+      storageBucket: "ecommerce-app-58009.appspot.com",
+      messagingSenderId: "868947109415",
+      appId: "1:868947109415:web:7fc78397fc097677b45002",
+      measurementId: "G-3EFHQ6Y0GH"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
