@@ -14,6 +14,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
