@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  isOpen: boolean = false;
+
   constructor() { }
+
+  toggleNavBar() {
+    this.isOpen = !this.isOpen;
+  }
 
   ngOnInit(): void {
   }
