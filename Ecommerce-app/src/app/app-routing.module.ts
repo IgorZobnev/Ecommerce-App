@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'logout', component: LogoutComponent},
   {path: 'orders', component: OrdersComponent},
   {path: 'products', component: ProductsComponent},
-  {path: 'sign-up', component: SingUpComponent},
+  {path: 'signup', component: SingUpComponent},
   {path: '**', component: NotfoundComponent}
 ];
 
