@@ -13,4 +13,8 @@ export class CartService {
   addToCart(Product) {
     return this.fs.collection(`User/${this.as.userID}/cart`).add(Product);
   }
+
+  getCart() {
+    return this.fs.collection(`User/${this.as.userID}/cart`).snapshotChanges();
+  }
 }
