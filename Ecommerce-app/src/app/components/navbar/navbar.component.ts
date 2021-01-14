@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  isUser: boolean = false;
+
   isOpen: boolean = false;
 
   constructor(private as : AuthService) { }
@@ -17,6 +19,14 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.as.user.subscribe(user => {
+      if (user) {
+        this.isUser = true;
+      }
+      else {
+        this.isUser = false;
+      }
+    })
   }
 
   logout() {
