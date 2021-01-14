@@ -23,3 +23,4 @@
         <button type="submit" class="btn btn-success" [disabled]="f.invalid">Create an account</button>
     </form>
 </div>
+<div class="alert alert-danger" *ngIf="errMessage">{{errMessage}}</div>

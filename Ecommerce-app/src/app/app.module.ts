@@ -1,8 +1,9 @@
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +47,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
       messagingSenderId: "868947109415",
       appId: "1:868947109415:web:7fc78397fc097677b45002",
       measurementId: "G-3EFHQ6Y0GH"
-    })
+    }),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

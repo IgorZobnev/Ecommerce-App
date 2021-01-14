@@ -1,5 +1,5 @@
 <h2 class="text-center">Log in</h2>
-<form #f="ngForm" (ngSubmit)="login(f)">
+<form #f="ngForm">
     <br/>
     <input ngModel name="mail" #mail="ngModel" type="email" class="form-control" required email placeholder="Email">
     <div class="alert alert-danger" *ngIf="mail.touched && mail.errors?.required">Email is required</div>
