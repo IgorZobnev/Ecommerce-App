@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart.service';
 import { ProductsService } from './../../services/products.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  add: number = -1;
 
   products: Array<any> = [
     /*{name: "Cottage cheese, 250 gr", price: 105, description: "Krasnodar farm cottage cheese from cow milk", picturePath: "/assets/products_images/1.jpg"},
@@ -21,7 +24,7 @@ export class HomeComponent implements OnInit {
     {name: "Mango", price: 360, description: "Natural mango from California", picturePath: "/assets/products_images/10.jpg"}*/
   ]
 
-  constructor(private ps: ProductsService) { }
+  constructor(private ps: ProductsService, private cart: CartService) { }
 
   ngOnInit(): void {
     this.ps.getAllProducts().subscribe(data => this.products = data);
@@ -29,7 +32,16 @@ export class HomeComponent implements OnInit {
 
   
   addToCart(index: number) {
-    console.log("Added", this.products[index]);
+    this.add = +index;
   }
 
+  buy(amount) {
+    let selectedProduct = this.products[this.add];
+    let data = {
+      name: selectedProduct.name,
+      price: selectedProduct.price,
+      amount: +amount
+    }
+    this.cart.addToCart(data).then(() => this.add = -1).catch(err => console.log(err));
+  }
 }
