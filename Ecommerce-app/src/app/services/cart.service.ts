@@ -1,5 +1,4 @@
 import { AuthService } from './auth.service';
-import { Product } from 'src/app/interface/products.interface';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 

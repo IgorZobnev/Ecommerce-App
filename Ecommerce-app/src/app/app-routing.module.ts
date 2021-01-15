@@ -1,3 +1,4 @@
+import { GuardService } from './services/guard.service';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { SingUpComponent } from './components/sing-up/sing-up.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -12,12 +13,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'admin', component: AdminComponent},
-  {path: 'cart', component: CartComponent},
+  {path: 'admin', component: AdminComponent, canActivate: [GuardService]},
+  {path: 'cart', component: CartComponent, canActivate: [GuardService]},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
-  {path: 'orders', component: OrdersComponent},
-  {path: 'products', component: ProductsComponent},
+  {path: 'orders', component: OrdersComponent, canActivate: [GuardService]},
+  {path: 'products', component: ProductsComponent, canActivate: [GuardService]},
   {path: 'signup', component: SingUpComponent},
   {path: '**', component: NotfoundComponent}
 ];
