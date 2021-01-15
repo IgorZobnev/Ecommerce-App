@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { CartService } from './../../services/cart.service';
 import { ProductsService } from './../../services/products.service';
 import { Component, OnInit } from '@angular/core';
@@ -24,7 +25,8 @@ export class HomeComponent implements OnInit {
     {name: "Mango", price: 360, description: "Natural mango from California", picturePath: "/assets/products_images/10.jpg"}*/
   ]
 
-  constructor(private ps: ProductsService, private cart: CartService) { }
+  constructor(private ps: ProductsService, private cart: CartService, private as: AuthService) {
+  }
 
   ngOnInit(): void {
     this.ps.getAllProducts().subscribe(data => this.products = data);
@@ -36,12 +38,14 @@ export class HomeComponent implements OnInit {
   }
 
   buy(amount) {
-    let selectedProduct = this.products[this.add];
-    let data = {
-      name: selectedProduct.name,
-      price: selectedProduct.price,
-      amount: +amount
+    if (amount > 0) {
+      let selectedProduct = this.products[this.add];
+      let data = {
+        name: selectedProduct.name,
+        price: selectedProduct.price,
+        amount: +amount
+      }
+      this.cart.addToCart(data).then(() => this.add = -1).catch(err => console.log(err));
     }
-    this.cart.addToCart(data).then(() => this.add = -1).catch(err => console.log(err));
   }
 }

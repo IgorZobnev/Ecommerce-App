@@ -13,7 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SingUpComponent } from './components/sing-up/sing-up.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { CartComponent } from './components/cart/cart.component';
-import { AccountComponent } from './components/account/account.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -28,7 +28,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     SingUpComponent,
     LogoutComponent,
     CartComponent,
-    AccountComponent,
+    AdminComponent,
     OrdersComponent,
     ProductsComponent,
     NavbarComponent,

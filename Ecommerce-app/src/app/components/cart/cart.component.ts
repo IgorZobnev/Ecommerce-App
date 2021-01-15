@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
 
   shoppingCart: Array<any>;
+  cartPrice: number = 0;
 
   constructor(private cart: CartService) { }
 
@@ -20,8 +21,22 @@ export class CartComponent implements OnInit {
           ...x.payload.doc.data() as {}
         }
       });
-      console.log(this.shoppingCart);
+      this.recalculate()
     });
   }
 
+  deleteCart(i: number) {
+    return this.cart.deleteCart(this.shoppingCart[i].id);
+  }
+
+  updateCart(i: number) {
+    return this.cart.updateCart(this.shoppingCart[i].id, this.shoppingCart[i].amount);
+  }
+
+  private recalculate() {
+    this.cartPrice = 0;
+    this.shoppingCart.forEach(l => {
+      this.cartPrice += l.amount * l.price;
+    });
+  }
 }

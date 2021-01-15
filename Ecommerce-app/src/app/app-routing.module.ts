@@ -5,14 +5,14 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { LoginComponent } from './components/login/login.component';
 import { CartComponent } from './components/cart/cart.component';
-import { AccountComponent } from './components/account/account.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'account', component: AccountComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'cart', component: CartComponent},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
