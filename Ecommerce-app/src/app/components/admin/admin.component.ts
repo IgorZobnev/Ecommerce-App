@@ -23,7 +23,6 @@ export class AdminComponent implements OnInit {
           ...x.payload.doc.data() as {}
         }
       })
-      console.log(this.productsArray)
     });
   }
 

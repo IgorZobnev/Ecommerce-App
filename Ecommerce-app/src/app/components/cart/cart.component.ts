@@ -1,3 +1,4 @@
+import { OrderService } from './../../services/order.service';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,8 +11,9 @@ export class CartComponent implements OnInit {
 
   shoppingCart: Array<any>;
   cartPrice: number = 0;
+  len: number = 0;
 
-  constructor(private cart: CartService) { }
+  constructor(private cart: CartService, private order: OrderService) { }
 
   ngOnInit(): void {
     this.cart.getCart().subscribe(cs => {
@@ -21,6 +23,7 @@ export class CartComponent implements OnInit {
           ...x.payload.doc.data() as {}
         }
       });
+      this.len = this.shoppingCart.length;
       this.recalculate();
     });
   }
@@ -38,5 +41,20 @@ export class CartComponent implements OnInit {
     this.shoppingCart.forEach(l => {
       this.cartPrice += l.amount * l.price;
     });
+    this.len = this.shoppingCart.length;
+  }
+
+  sendToOrder() {
+    if (this.shoppingCart.length > 0) {
+      let ord = this.shoppingCart;
+      let data = {
+        productList: ord,
+        isSend: false
+      }
+      this.order.addToOrder(data).then(() => console.log(data)).catch(err => console.log(err));
+      this.shoppingCart.forEach(l => {
+        this.cart.deleteCart(l.id);
+      });
+    }
   }
 }

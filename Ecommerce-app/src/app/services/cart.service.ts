@@ -16,7 +16,6 @@ export class CartService {
   getCart() {
     return this.fs.collection(`User/${this.as.userID}/cart`).snapshotChanges();
   }
-
   
   deleteCart(id) {
     return this.fs.doc(`User/${this.as.userID}/cart/${id}`).delete();
