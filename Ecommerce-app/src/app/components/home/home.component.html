@@ -1,13 +1,24 @@
-<div class="body">
-    <div class="row">
-        <div class="col col-12 col-md-6 col-lg-3 p-5" *ngFor="let prod of products, index as i">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" [src]="prod.picturePath" style="width: 286px; height: 180px;">
-                <div class="card-body">
-                    <h5 class="card-title">{{prod.name | titlecase}}</h5>
-                    <p class="card-text">{{prod.description}}</p>
+<div class="body" id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                Welcome to the Ecommerce-App. We're glad to see you. Now you can look at the 
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    product list
+                </button>
+            </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="row">
+                <div class="col col-12 col-md-6 col-lg-3 p-5" *ngFor="let prod of products, index as i">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" [src]="prod.picturePath" style="width: 286px; height: 180px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{prod.name | titlecase}}</h5>
+                            <p class="card-text">{{prod.description}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+      </div>
 </div>

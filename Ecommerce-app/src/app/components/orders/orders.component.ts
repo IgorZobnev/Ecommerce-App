@@ -23,11 +23,11 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  deleteCart(i: number) {
+  deleteOrder(i: number) {
     return this.order.deleteOrder(this.orderList[i].id);
   }
 
-  updateCart(i: number) {
+  updateOrder(i: number) {
     return this.order.updateOrder(this.orderList[i].id, this.orderList[i].isSend);
   }
 }

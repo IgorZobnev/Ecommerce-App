@@ -49,7 +49,8 @@ export class CartComponent implements OnInit {
       let ord = this.shoppingCart;
       let data = {
         productList: ord,
-        isSend: false
+        isSend: false,
+        total: this.cartPrice
       }
       this.order.addToOrder(data).then(() => console.log(data)).catch(err => console.log(err));
       this.shoppingCart.forEach(l => {
