@@ -9,16 +9,19 @@
                 <a class="nav-link" routerLink="/" routerLinkActive="Active">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/admin" routerLinkActive="Active" *ngIf="isUser">Admin</a>
+                <a class="nav-link" routerLink="/products-admin" routerLinkActive="Active" *ngIf="isAdmin">Products change</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/cart" routerLinkActive="Active" *ngIf="isUser">Cart</a>
+                <a class="nav-link" routerLink="/orders-admin" routerLinkActive="Active" *ngIf="isAdmin">Orders change</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/orders" routerLinkActive="Active" *ngIf="isUser">Orders</a>
+                <a class="nav-link" routerLink="/products" routerLinkActive="Active" *ngIf="isUser && !isAdmin">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/products" routerLinkActive="Active" *ngIf="isUser">Products</a>
+                <a class="nav-link" routerLink="/cart" routerLinkActive="Active" *ngIf="isUser && !isAdmin">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/orders" routerLinkActive="Active" *ngIf="isUser && !isAdmin">Orders</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/login" routerLinkActive="Active"  *ngIf="!isUser">Login</a>

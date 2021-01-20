@@ -19,6 +19,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { OrdersAdminComponent } from './components/orders-admin/orders-admin.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     OrdersComponent,
     ProductsComponent,
     NavbarComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    OrdersAdminComponent
   ],
   imports: [
     BrowserModule,

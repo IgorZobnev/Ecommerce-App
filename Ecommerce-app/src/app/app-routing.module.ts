@@ -10,14 +10,16 @@ import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { OrdersAdminComponent } from './components/orders-admin/orders-admin.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'admin', component: AdminComponent, canActivate: [GuardService]},
+  {path: 'products-admin', component: AdminComponent, canActivate: [GuardService]},
   {path: 'cart', component: CartComponent, canActivate: [GuardService]},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
   {path: 'orders', component: OrdersComponent, canActivate: [GuardService]},
+  {path: 'orders-admin', component: OrdersAdminComponent, canActivate: [GuardService]},
   {path: 'products', component: ProductsComponent, canActivate: [GuardService]},
   {path: 'signup', component: SingUpComponent},
   {path: '**', component: NotfoundComponent}

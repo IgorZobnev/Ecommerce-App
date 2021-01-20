@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/services/order.service';
 
@@ -9,8 +10,9 @@ import { OrderService } from 'src/app/services/order.service';
 export class OrdersComponent implements OnInit {
   
   orderList: Array<any>;
+  isAdmin: boolean = false;
 
-  constructor(private order: OrderService) { }
+  constructor(private order: OrderService, private as: AuthService) { }
 
   ngOnInit(): void {
     this.order.getOrder().subscribe(cs => {
@@ -20,7 +22,9 @@ export class OrdersComponent implements OnInit {
           ...x.payload.doc.data() as {}
         }
       });
+      
     });
+    this.as.getInfo().then(cs => this.isAdmin = cs);
   }
 
   deleteOrder(i: number) {

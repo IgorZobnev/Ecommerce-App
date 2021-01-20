@@ -8,10 +8,11 @@ export class UserService {
 
   constructor(private as: AngularFirestore) { }
 
-  addNewUser(id: string, name: string, address: string) {
+  addNewUser(id: string, name: string, address: string, isAdmin: boolean) {
     return this.as.doc("User/" + id).set({
       name,
-      address
+      address,
+      isAdmin
     });
   }
 }

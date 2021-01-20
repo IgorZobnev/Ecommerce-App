@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   isUser: boolean = false;
-
   isOpen: boolean = false;
+  isAdmin: boolean = false;
 
   constructor(private as : AuthService) { }
 
@@ -23,16 +23,19 @@ export class NavbarComponent implements OnInit {
       if (user) {
         this.isUser = true;
         this.as.userID = user.uid;
+        this.as.getInfo().then(cs => this.isAdmin = cs);
       }
       else {
         this.isUser = false;
         this.as.userID = "";
       }
     })
+    
   }
 
   logout() {
     this.as.logout();
+    this.isAdmin = false;
   }
 
 }
