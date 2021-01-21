@@ -27,15 +27,9 @@
                 </table>
              </td>
              <td>{{order.total | currency: 'RUB': "symbol-narrow": "1.2-2"}}</td>
+             <td>{{order.isSend? "Order is send": "Order is not send. Please, wait"}}</td>
              <td>
-                <label class="form-check-label p-5">
-                    <input type="checkbox" class="form-check-input" [(ngModel)]="order.isSend" [disabled]="!isAdmin"/>
-                    Order is ready and send
-                </label>
-             </td>
-             <td>
-                 <button class="btn btn-success text-white" style="margin: 7px;" (click)="updateOrder(i)" [disabled]="isAdmin || order.isSend">Save changes</button>
-                 <button class="btn btn-secondary text-white" style="margin: 7px;" (click)="deleteOrder(i)" [disabled]="isAdmin || order.isSend">Delete</button>
+                 <button class="btn btn-secondary text-white" style="margin: 7px;" (click)="deleteOrder(i)" [disabled]="order.isSend">Delete</button>
              </td>
          </tr>
     </tbody>

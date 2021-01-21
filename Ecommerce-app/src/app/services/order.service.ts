@@ -19,8 +19,4 @@ export class OrderService {
   deleteOrder(id) {
     return this.fs.doc(`User/${this.as.userID}/order/${id}`).delete();
   }
-
-  updateOrder(id, isSend) {
-    return this.fs.doc(`User/${this.as.userID}/order/${id}`).update({isSend});
-  }
 }

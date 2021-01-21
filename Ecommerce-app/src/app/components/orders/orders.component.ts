@@ -29,8 +29,4 @@ export class OrdersComponent implements OnInit {
   deleteOrder(i: number) {
     return this.order.deleteOrder(this.orderList[i].id);
   }
-
-  updateOrder(i: number) {
-    return this.order.updateOrder(this.orderList[i].id, this.orderList[i].isSend);
-  }
 }
