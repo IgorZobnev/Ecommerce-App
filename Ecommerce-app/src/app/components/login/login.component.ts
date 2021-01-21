@@ -20,6 +20,5 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/']);
     })
     .catch(err => console.log(err));
-    
   }
 }
