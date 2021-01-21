@@ -6,13 +6,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderAdminService {
-  users: Observable<any>;
-  usersID: Array<string> = [];
 
-  constructor(private fs: AngularFirestore) {
-    this.users = this.fs.collection(`User`).get();
-    console.log(this.users);
+  constructor(private fs: AngularFirestore) {}
+
+  getUsers() {
+    return this.fs.collection(`User`).snapshotChanges();
   }
 
-  
+  getOrders(id: number) {
+    return this.fs.collection(`User/${id}/order`).snapshotChanges();
+  }
+
+  updateOrder(userID, orderID, isSend) {
+    return this.fs.doc(`User/${userID}/order/${orderID}`).update({isSend});
+  }
 }

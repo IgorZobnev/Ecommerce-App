@@ -22,7 +22,6 @@ export class OrdersComponent implements OnInit {
           ...x.payload.doc.data() as {}
         }
       });
-      
     });
     this.as.getInfo().then(cs => this.isAdmin = cs);
   }

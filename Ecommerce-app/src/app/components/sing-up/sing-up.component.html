@@ -1,5 +1,5 @@
 <div class="body">
-    <div class="text-center">Sign Up</div>
+    <h2 class="text-center">Sign up</h2>
     <br/>
     <form #f="ngForm" (ngSubmit)="signup(f)">
         <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Name" required/>
@@ -19,10 +19,10 @@
         <br/>
         <input ngModel name="address" #address="ngModel" type="text" class="form-control" placeholder="Address" required/>
         <div class="alert alert-danger" *ngIf="address.invalid && address.touched">Address is required</div>
-        <label class="form-check-label" style="margin: 4ex">
+        <!--<label class="form-check-label" style="margin: 4ex">
             <input ngModel name="isAdmin" #isAdmin="ngModel" type="checkbox" class="form-check-input"/>
             User is admin
-        </label>
+        </label>-->
         <br/>
         <button type="submit" class="btn btn-success" [disabled]="f.invalid">Create an account</button>
     </form>
