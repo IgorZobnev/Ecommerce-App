@@ -43,13 +43,13 @@ import { OrdersAdminComponent } from './components/orders-admin/orders-admin.com
     NgbModule,
     FormsModule,
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyCG7sSIc0rQSEx3xy55VOfYSnv3bNdUC0E",
-      authDomain: "ecommerce-app-58009.firebaseapp.com",
-      projectId: "ecommerce-app-58009",
-      storageBucket: "ecommerce-app-58009.appspot.com",
-      messagingSenderId: "868947109415",
-      appId: "1:868947109415:web:7fc78397fc097677b45002",
-      measurementId: "G-3EFHQ6Y0GH"
+      apiKey: "AIzaSyAXhFueuF0_6KOpzDY_GKPGBbXorRPmGN8",
+      authDomain: "ecommerceapp-ce72e.firebaseapp.com",
+      projectId: "ecommerceapp-ce72e",
+      storageBucket: "ecommerceapp-ce72e.appspot.com",
+      messagingSenderId: "804974089182",
+      appId: "1:804974089182:web:6101d73572783ebbe2834f",
+      measurementId: "G-4Y24W5179Z"
     }),
     AngularFirestoreModule,
     AngularFireAuthModule,

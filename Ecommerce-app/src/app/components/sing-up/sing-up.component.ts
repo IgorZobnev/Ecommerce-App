@@ -19,7 +19,7 @@ export class SingUpComponent implements OnInit {
 
   signup(form: NgForm) {
     this.as.signup(form.value.email, form.value.password).then(data => {
-      this.user.addNewUser(data.user.uid, form.value.name, form.value.address, form.value.isAdmin);
+      this.user.addNewUser(data.user.uid, form.value.name, form.value.address, false); //form.value.isAdmin);
       this.errMessage = '';
       this.router.navigate(['/']);
     })

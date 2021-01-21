@@ -14,7 +14,7 @@ export class ProductsService {
   }
 
   addProduct(name: string, price: number, description: string, image: File) {
-    let refer = this.storage.ref('ProductsImages/' + image.name);
+    let refer = this.storage.ref('Images/' + image.name);
     refer.put(image).then(() => {refer.getDownloadURL().subscribe(picturePath => {
       this.fs.collection('Product').add({name, price, description, picturePath})
     })});
