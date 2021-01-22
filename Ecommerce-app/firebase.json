@@ -1,5 +1,16 @@
 {
   "hosting": {
-    "public": "dist/Ecommerce-app/"
+    "public": "dist/Ecommerce-app/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }
