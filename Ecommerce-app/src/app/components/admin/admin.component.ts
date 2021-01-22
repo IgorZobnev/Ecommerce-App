@@ -30,11 +30,6 @@ export class AdminComponent implements OnInit {
     let name = f.value.name, price = f.value.price, 
     description = f.value.description, image = (this.image.nativeElement as HTMLInputElement).files[0];
     this.ps.addProduct(name, price, description, image);
-    f.value.name = "";
-    f.value.price = null;
-    f.value.description = "";
-    f.value.image = null;
-    console.log("1");
   }
 
   updateProduct(i: number) {
