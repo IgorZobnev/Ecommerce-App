@@ -34,6 +34,7 @@ export class AdminComponent implements OnInit {
     f.value.price = null;
     f.value.description = "";
     f.value.image = null;
+    console.log("1");
   }
 
   updateProduct(i: number) {
